@@ -13,8 +13,21 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata = {
   title: "Adil Ali | Entrepreneur, Journalist, Lawyer, Public Leader",
-  description:
-    "Professional portfolio of Adil Ali, showcasing leadership across technology, journalism, law, and public service.",
+  description: "Official Portfolio of Adil Ali",
+  openGraph: {
+    title: "Adil Ali",
+    description:
+      "Professional portfolio of Adil Ali, showcasing leadership across technology, journalism, law, and public service.",
+    url: "https://adilali.me",
+    siteName: "Adil Ali",
+    images: [
+      {
+        url: "/images/adil3.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
