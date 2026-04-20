@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::selection {
+  background: rgba(114, 210, 187, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f0f4f9;
+  color: #2d2d38;
+  background-image:
+    radial-gradient(circle at 20% 0%, rgba(114, 210, 187, 0.18), transparent 22%),
+    radial-gradient(circle at 100% 10%, rgba(75, 127, 205, 0.14), transparent 20%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@layer components {
+  .section-shell {
+    @apply relative;
+  }
+
+  .section-label {
+    @apply inline-flex rounded-full bg-accent/15 px-4 py-1 text-sm font-semibold text-secondary;
+  }
+
+  .section-title {
+    @apply mt-4 font-display text-4xl font-bold tracking-tight text-ink md:text-5xl;
+  }
+
+  .section-copy {
+    @apply mt-5 text-lg leading-8 text-ink/75;
+  }
+
+  .panel {
+    @apply border border-white/75 shadow-soft backdrop-blur;
+    background-color: rgba(255, 255, 255, 0.82);
+  }
+
+  .glass-card {
+    @apply border border-white/75 shadow-soft backdrop-blur;
+    background-color: rgba(255, 255, 255, 0.65);
+  }
+
+  .form-input {
+    @apply rounded-[1.25rem] border border-secondary/10 bg-background px-5 py-4 text-base text-ink outline-none transition placeholder:text-ink/40 focus:border-action focus:ring-2 focus:ring-action/15;
+  }
+}
+
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(64, 87, 130, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(64, 87, 130, 0.06) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), transparent);
+}
+
+.page-orb {
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+  border-radius: 9999px;
+  filter: blur(70px);
+  opacity: 0.55;
+}
+
+.page-orb-one {
+  top: 12rem;
+  left: -8rem;
+  height: 16rem;
+  width: 16rem;
+  background: rgba(114, 210, 187, 0.22);
+}
+
+.page-orb-two {
+  right: -7rem;
+  top: 44rem;
+  height: 18rem;
+  width: 18rem;
+  background: rgba(75, 127, 205, 0.14);
+}
+
+.animated-ring {
+  animation: pulseRing 7s ease-in-out infinite;
+}
+
+.floating-soft {
+  animation: floatingSoft 8s ease-in-out infinite;
+}
+
+@keyframes floatingSoft {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulseRing {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(75, 127, 205, 0.08);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(75, 127, 205, 0);
+  }
+}
